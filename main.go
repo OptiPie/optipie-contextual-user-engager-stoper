@@ -3,9 +3,10 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/OptiPie/optipie-contextual-user-engager-stoper/prepare"
 	"log"
 	"os"
+
+	"github.com/OptiPie/optipie-contextual-user-engager-stoper/prepare"
 
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/aws/aws-sdk-go-v2/service/ec2"
@@ -21,7 +22,7 @@ func Handler(ctx context.Context) error {
 
 	ec2Client := prepare.Ec2(awsCfg)
 	_, err = ec2Client.StopInstances(ctx, &ec2.StopInstancesInput{
-		InstanceIds: []string{"i-023509645a6761561"},
+		InstanceIds: []string{"i-0673a6f548c5b76a7"},
 	})
 
 	if err != nil {
